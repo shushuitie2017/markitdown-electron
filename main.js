@@ -111,12 +111,17 @@ function waitForServer(port, timeout = 30000) {
 
 // Create the main application window
 function createWindow(port) {
+  const iconPath = app.isPackaged
+    ? path.join(process.resourcesPath, 'icon.ico')
+    : path.join(__dirname, 'build', 'icon.ico');
+
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 750,
     minWidth: 600,
     minHeight: 500,
     title: 'MarkItDown',
+    icon: iconPath,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,

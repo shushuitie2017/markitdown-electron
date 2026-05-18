@@ -19,7 +19,8 @@
     "appId": "com.markitdown.desktop",
     "productName": "MarkItDown",
     "directories": {
-      "output": "dist"
+      "output": "dist",
+      "buildResources": "build"
     },
     "files": [
       "main.js",
@@ -30,6 +31,10 @@
         "from": "python/dist/server",
         "to": "server",
         "filter": ["**/*"]
+      },
+      {
+        "from": "build/icon.ico",
+        "to": "icon.ico"
       }
     ],
     "forceCodeSigning": false,
@@ -37,6 +42,7 @@
       "target": [
         { "target": "dir", "arch": ["x64"] }
       ],
+      "icon": "build/icon.ico",
       "signAndEditExecutable": false
     },
     "mac": {
