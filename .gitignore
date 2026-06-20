@@ -7,3 +7,9 @@ python/*.spec
 *.pyc
 __pycache__/
 .env
+
+# claude-flow: 凭据与本地设置不入库
+.claude/settings.local.json
+servers.json
+*.pem
+credentials.*
